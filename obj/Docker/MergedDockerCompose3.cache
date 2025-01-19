@@ -1,0 +1,245 @@
+name: dockercompose13840776340426755950
+services:
+  identityapi:
+    build:
+      context: /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media
+      dockerfile: Media/IdentityAPI/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: IdentityAPI
+      target: base
+    container_name: IdentityAPI
+    entrypoint:
+      - tail
+      - -f
+      - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: ""
+    image: identityapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net7.0/IdentityAPI.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "5163"
+        protocol: tcp
+    tty: true
+    volumes:
+      - type: bind
+        source: /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media/Media/IdentityAPI
+        target: /app
+        bind:
+          create_host_path: true
+      - type: bind
+        source: /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media
+        target: /src
+        bind:
+          create_host_path: true
+      - type: bind
+        source: /Users/marcin/vsdbg/vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: /Users/marcin/.nuget/packages/
+        target: /root/.nuget/packages
+        read_only: true
+        bind:
+          create_host_path: true
+  mssql_component:
+    container_name: mssql_component
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: ExamplePassword
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    networks:
+      backend: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "1402"
+        protocol: tcp
+    volumes:
+      - type: volume
+        source: sqlserver-data
+        target: /var/opt/mssql
+        volume: {}
+  peopleapi:
+    build:
+      context: /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media
+      dockerfile: Media/PeopleAPI/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: PeopleAPI
+      target: base
+    container_name: PeopleAPI
+    entrypoint:
+      - tail
+      - -f
+      - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: ""
+    image: peopleapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net7.0/PeopleAPI.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "5111"
+        protocol: tcp
+    tty: true
+    volumes:
+      - type: bind
+        source: /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media/Media/PeopleAPI
+        target: /app
+        bind:
+          create_host_path: true
+      - type: bind
+        source: /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media
+        target: /src
+        bind:
+          create_host_path: true
+      - type: bind
+        source: /Users/marcin/vsdbg/vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: /Users/marcin/.nuget/packages/
+        target: /root/.nuget/packages
+        read_only: true
+        bind:
+          create_host_path: true
+  postapi:
+    build:
+      context: /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media
+      dockerfile: Media/PostAPI/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: PostAPI
+      target: base
+    container_name: PostAPI
+    entrypoint:
+      - tail
+      - -f
+      - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: ""
+    image: postapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net7.0/PostAPI.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "5232"
+        protocol: tcp
+    tty: true
+    volumes:
+      - type: bind
+        source: /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media/Media/PostAPI
+        target: /app
+        bind:
+          create_host_path: true
+      - type: bind
+        source: /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media
+        target: /src
+        bind:
+          create_host_path: true
+      - type: bind
+        source: /Users/marcin/vsdbg/vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: /Users/marcin/.nuget/packages/
+        target: /root/.nuget/packages
+        read_only: true
+        bind:
+          create_host_path: true
+  webui:
+    build:
+      context: /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media
+      dockerfile: Media/WebUI/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: WebUI
+      target: base
+    container_name: WebUI
+    entrypoint:
+      - tail
+      - -f
+      - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: ""
+    image: webui:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net7.0/WebUI.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "5155"
+        protocol: tcp
+    tty: true
+    volumes:
+      - type: bind
+        source: /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media/Media/WebUI
+        target: /app
+        bind:
+          create_host_path: true
+      - type: bind
+        source: /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media
+        target: /src
+        bind:
+          create_host_path: true
+      - type: bind
+        source: /Users/marcin/vsdbg/vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: /Users/marcin/.nuget/packages/
+        target: /root/.nuget/packages
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  backend:
+    name: dockercompose13840776340426755950_backend
+    driver: bridge
+  default:
+    name: dockercompose13840776340426755950_default
+volumes:
+  sqlserver-data:
+    name: dockercompose13840776340426755950_sqlserver-data

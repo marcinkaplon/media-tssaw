@@ -1,0 +1,155 @@
+﻿<Properties StartupConfiguration="Multiple Projects">
+  <MonoDevelop.Ide.ItemProperties.IdentityAPI PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.PeopleAPI PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MonoDevelop.Ide.ItemProperties.Media PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MonoDevelop.Ide.ItemProperties.WebUI PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="Multiple Projects" Name="Multiple Projects">
+      <Items>
+        <StartupItem ItemId="{2E5AB553-7477-4A87-9C27-F992D57767B9}" ItemName="IdentityAPI" ConfigurationId="http" />
+        <StartupItem ItemId="{E248F889-EC15-43CD-8F8B-B3A611079015}" ItemName="PeopleAPI" ConfigurationId="http" />
+        <StartupItem ItemId="{52CEFAD6-0699-4F60-8D15-9FAD0A9F65C0}" ItemName="PostAPI" ConfigurationId="http" />
+        <StartupItem ItemId="{766177F7-600A-42CA-BF2B-8A4077C82E1A}" ItemName="WebUI" ConfigurationId="http" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.PostAPI PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Media/IdentityAPI/Controllers/AuthController.cs">
+    <Files>
+      <File FileName="Media/WebUI/Dockerfile" />
+      <File FileName="../../../../../../../../../Applications/Visual Studio.app/Contents/MonoBundle/AddIns/MonoDevelop.Docker/MSbuild/Sdks/Microsoft.Docker.Sdk/build/Microsoft.VisualStudio.Docker.Compose.targets" />
+      <File FileName=".dockerignore" />
+      <File FileName="docker-compose.yml" />
+      <File FileName="docker-compose.override.yml" />
+      <File FileName="Media/WebUI/appsettings.json" />
+      <File FileName="Media/PostAPI/appsettings.json" />
+      <File FileName="Media/PostAPI/Dockerfile" />
+      <File FileName="Media/PostAPI/appsettings.Development.json" />
+      <File FileName="Media/PeopleAPI/appsettings.json" />
+      <File FileName="Media/IdentityAPI/appsettings.json" />
+      <File FileName="Media/PeopleAPI/Controllers/UserController.cs" />
+      <File FileName="Media/PeopleAPI/Models/UserProfile.cs" />
+      <File FileName="Media/PeopleAPI/Dockerfile" />
+      <File FileName="Media/IdentityAPI/Dockerfile" />
+      <File FileName="Media/PostAPI/Program.cs" />
+      <File FileName="Media/PostAPI/Data/PostDbContext.cs" />
+      <File FileName="Media/WebUI/Models/Post.cs" />
+      <File FileName="Media/WebUI/Models/User.cs" />
+      <File FileName="Media/WebUI/Controllers/AuthController.cs" />
+      <File FileName="Media/WebUI/Program.cs" />
+      <File FileName="Media/WebUI/Views/Home/Index.cshtml" />
+      <File FileName="Media/WebUI/Controllers/ProfileController.cs" />
+      <File FileName="Media/WebUI/Controllers/HomeController.cs" />
+      <File FileName="Media/WebUI/Models/LoginResponse.cs" />
+      <File FileName="Media/WebUI/Models/RegisterViewModel.cs" />
+      <File FileName="Media/WebUI/Models/UserProfileViewModel.cs" />
+      <File FileName="Media/WebUI/Views/Auth/Login.cshtml" />
+      <File FileName="Media/WebUI/wwwroot/css/site.css" />
+      <File FileName="Media/WebUI/wwwroot/css/styles.css" />
+      <File FileName="Media/WebUI/Views/Shared/_Layout.cshtml" />
+      <File FileName="Media/PostAPI/Services/PostService.cs" />
+      <File FileName="Media/PostAPI/Repositories/PostRepository.cs" />
+      <File FileName="Media/PostAPI/Models/Post.cs" />
+      <File FileName="Media/WebUI/Views/Profile/Details.cshtml" />
+      <File FileName="Media/WebUI/Models/LoginViewModel.cs" />
+      <File FileName="Media/PeopleAPI/Services/UserService.cs" />
+      <File FileName="Media/PeopleAPI/Services/IUserService.cs" />
+      <File FileName="Media/PeopleAPI/Repositories/UserProfileRepository.cs" />
+      <File FileName="Media/PeopleAPI/Repositories/Repository.cs" />
+      <File FileName="Media/PeopleAPI/Repositories/IUserProfileRepository.cs" />
+      <File FileName="Media/PeopleAPI/Repositories/IRepository.cs" />
+      <File FileName="Media/PeopleAPI/Models/Dto/UpdateUserProfileDto.cs" />
+      <File FileName="Media/PeopleAPI/Models/Dto/CreateUserProfileDto.cs" />
+      <File FileName="Media/IdentityAPI/Controllers/AuthController.cs" Line="91" Column="54" />
+      <File FileName="Media/WebUI/Models/ErrorViewModel.cs" />
+      <File FileName="Media/IdentityAPI/Models/ApplicationUser.cs" />
+      <File FileName="Media/IdentityAPI/Models/Dto/RegisterDto.cs" />
+      <File FileName="Media/WebUI/Views/Auth/Register.cshtml" />
+      <File FileName="Media/PeopleAPI/Data/PeopleUnitOfWork.cs" />
+      <File FileName="Media/PeopleAPI/Data/PeopleDbContext.cs" />
+      <File FileName="Media/PostAPI/Models/Dto/UpdatePostDto.cs" />
+      <File FileName="Media/PostAPI/Models/Dto/CreatePostDto.cs" />
+      <File FileName="Media/PostAPI/Controllers/PostController.cs" />
+      <File FileName="Media/PostAPI/Services/IPostService.cs" />
+      <File FileName="Media/PostAPI/Repositories/IPostRepository.cs" />
+      <File FileName="Media/PostAPI/Repositories/IRepository.cs" />
+      <File FileName="Media/WebUI/Views/Profile/Edit.cshtml" />
+      <File FileName="Media/WebUI/Views/Shared/Error.cshtml" />
+      <File FileName="Media/WebUI/Models/UserEditViewModel.cs" />
+      <File FileName="Media/PeopleAPI/Data/IPeopleUnitOfWork.cs" />
+      <File FileName="Media/PeopleAPI/Models/UserFollows.cs" />
+      <File FileName="Media/PeopleAPI/Repositories/IUserFollowsRepository.cs" />
+      <File FileName="Media/PeopleAPI/Repositories/UserFollowsRepository.cs" />
+      <File FileName="Media/PeopleAPI/Program.cs" />
+      <File FileName="Media/WebUI/Models/FollowResponse.cs" />
+      <File FileName="Media/WebUI/Models/ErrorResponse.cs" />
+      <File FileName="Media/WebUI/Models/FollowCountResponse.cs" />
+      <File FileName="Media/WebUI/Controllers/FeedController.cs" />
+      <File FileName="Media/WebUI/Models/PostListViewModel.cs" />
+      <File FileName="Media/WebUI/Views/Feed/Index.cshtml" />
+      <File FileName="Media/IdentityAPI/Program.cs" />
+      <File FileName="Media/IdentityAPI/Data/ApplicationDbContext.cs" />
+      <File FileName="Media/WebUI/Models/RegistrationReponse.cs" />
+      <File FileName="Media/WebUI/Models/UserEditSend.cs" />
+      <File FileName="Media/WebUI/Controllers/PostController.cs" />
+      <File FileName="Media/WebUI/Views/Post/Edit.cshtml" />
+      <File FileName="Media/WebUI/Models/UserListViewModel.cs" />
+      <File FileName="Media/WebUI/Views/Profile/UserList.cshtml" />
+      <File FileName="Media/WebUI/Views/_ViewImports.cshtml" />
+      <File FileName="Media/WebUI/Views/_ViewStart.cshtml" />
+      <File FileName="Media/WebUI/Controllers/AccountController.cs" />
+      <File FileName="Media/PeopleAPI/Data/DataSeeder.cs" />
+      <File FileName="Media/IdentityAPI/Data/DataSeeder.cs" />
+      <File FileName="Media/PostAPI/Data/DataSeeder.cs" />
+      <File FileName="Media/WebUI/appsettings.Development.json" />
+      <File FileName="Media/WebUI/Views/Account/AccessDenied.cshtml" />
+      <File FileName="Media/PostAPI/Repositories/Repository.cs" />
+      <File FileName="Media/PostAPI/Data/IPostUnitOfWork.cs" />
+      <File FileName="Media/PostAPI/Data/PostUnitOfWork.cs" />
+      <File FileName="Media/IdentityAPI/Models/Dto/LoginDto.cs" />
+      <File FileName="Media/IdentityAPI/appsettings.Development.json" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Media" expanded="True">
+            <Node name="docker-compose" expanded="True" />
+            <Node name="IdentityAPI" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="AuthController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True">
+                <Node name="Dto" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="PeopleAPI" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+            </Node>
+            <Node name="PostAPI" expanded="True">
+              <Node name="Data" expanded="True" />
+            </Node>
+            <Node name="WebUI" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Auth" expanded="True" />
+                <Node name="Profile" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

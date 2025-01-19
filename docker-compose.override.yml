@@ -1,0 +1,27 @@
+services:
+  postapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5232:80"
+
+  peopleapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5111:80"
+
+
+  identityapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5163:80"
+
+
+  webui:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5155:80"
+

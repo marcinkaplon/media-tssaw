@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "4BydTWeLxrv5fWdoZarDOohnV+DmFyfXIAP3ou/SsTM=",
+  "Source": "PeopleAPI",
+  "BasePath": "_content/PeopleAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

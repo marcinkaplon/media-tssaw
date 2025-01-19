@@ -1,0 +1,105 @@
+version: '3.4'
+
+services:
+  identityapi:
+    image: identityapi:dev
+    container_name: IdentityAPI
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "IdentityAPI"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=
+    volumes:
+      - /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media/Media/IdentityAPI:/app
+      - /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media:/src
+      - /Users/marcin/vsdbg/vs2017u5:/remote_debugger:rw
+      - /Users/marcin/.nuget/packages/:/root/.nuget/packages:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/net7.0/IdentityAPI.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+  peopleapi:
+    image: peopleapi:dev
+    container_name: PeopleAPI
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "PeopleAPI"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=
+    volumes:
+      - /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media/Media/PeopleAPI:/app
+      - /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media:/src
+      - /Users/marcin/vsdbg/vs2017u5:/remote_debugger:rw
+      - /Users/marcin/.nuget/packages/:/root/.nuget/packages:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/net7.0/PeopleAPI.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  postapi:
+    image: postapi:dev
+    container_name: PostAPI
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "PostAPI"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=
+    volumes:
+      - /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media/Media/PostAPI:/app
+      - /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media:/src
+      - /Users/marcin/vsdbg/vs2017u5:/remote_debugger:rw
+      - /Users/marcin/.nuget/packages/:/root/.nuget/packages:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/net7.0/PostAPI.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  webui:
+    image: webui:dev
+    container_name: WebUI
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "WebUI"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=
+    volumes:
+      - /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media/Media/WebUI:/app
+      - /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media:/src
+      - /Users/marcin/vsdbg/vs2017u5:/remote_debugger:rw
+      - /Users/marcin/.nuget/packages/:/root/.nuget/packages:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/net7.0/WebUI.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true

@@ -1,0 +1,8 @@
+/Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media/Media/obj/Debug/net7.0/Media.csproj.AssemblyReference.cache
+/Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media/Media/obj/Debug/net7.0/Media.GeneratedMSBuildEditorConfig.editorconfig
+/Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media/Media/obj/Debug/net7.0/Media.AssemblyInfoInputs.cache
+/Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media/Media/obj/Debug/net7.0/Media.AssemblyInfo.cs
+/Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media/Media/obj/Debug/net7.0/Media.csproj.CoreCompileInputs.cache
+/Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media/Media/obj/Debug/net7.0/Media.MvcApplicationPartsAssemblyInfo.cache
+/Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media/Media/obj/Debug/net7.0/Media.RazorAssemblyInfo.cache
+/Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media/Media/obj/Debug/net7.0/Media.RazorAssemblyInfo.cs

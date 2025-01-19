@@ -1,0 +1,52 @@
+﻿@model WebUI.Models.PostListViewModel
+
+@{
+    ViewData["Title"] = "Obserwujesz";
+}
+
+<h1>Posty obserwowanych użytkowników</h1>
+
+@if (User.Identity.IsAuthenticated)
+{
+    @if (Model.Posts != null && Model.Posts.Any())
+    {
+        foreach (var post in Model.Posts)
+        {
+            @if (post.Author != null)
+            {
+                <div class="post-card">
+                    <div class="post-header">
+                        <div class="profile-pic-post">
+                            <img src="@post.Author.ProfilePicturePath" alt="Profile Picture" />
+                        </div>
+                        <div class="post-info">
+                            <div class="user-info">
+                                <h4>
+                                    @post.Author.Username
+                                    <a href="@Url.Action("Details", "Profile", new { name = post.Author.UsernameUnique })" class="user-unique-id">@@@post.Author.UsernameUnique</a>
+                                </h4>
+                            </div>
+                            <span class="post-date">@post.CreatedAt.ToString("dd.MM.yyyy HH:mm")</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <p>@post.Content</p>
+                    </div>
+                    @if (post.Author.UsernameUnique == User.Identity.Name)
+                    {
+                        <div class="post-actions">
+                            <a href="@Url.Action("Edit", "Post", new { id = post.Id })" class="action-link">Edytuj</a>
+                            <a href="@Url.Action("Delete", "Post", new { id = post.Id })" class="action-link">Usuń</a>
+                        </div>
+                    }
+                </div>
+            }
+        }
+    }
+    else
+    {
+        <p>Użytkownicy, których obserwujesz, nie dodali żadnych postów.</p>
+    }
+
+}
+

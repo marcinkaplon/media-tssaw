@@ -1,0 +1,64 @@
+services:
+  postapi:
+    image: ${DOCKER_REGISTRY-}postapi
+    container_name: postapi-1
+    build:
+      context: .
+      dockerfile: Media/PostAPI/Dockerfile
+    depends_on:
+      - mssql_db
+    networks:
+      - mynetwork
+
+  peopleapi:
+    image: ${DOCKER_REGISTRY-}peopleapi
+    container_name: peopleapi-1
+    build:
+      context: .
+      dockerfile: Media/PeopleAPI/Dockerfile
+    depends_on:
+      - mssql_db
+    networks:
+      - mynetwork
+
+
+  identityapi:
+    image: ${DOCKER_REGISTRY-}identityapi
+    container_name: identityapi-1
+    build:
+      context: .
+      dockerfile: Media/IdentityAPI/Dockerfile
+    depends_on:
+      - mssql_db
+    networks:
+      - mynetwork
+
+
+  webui:
+    image: ${DOCKER_REGISTRY-}webui
+    container_name: webui-1
+    build:
+      context: .
+      dockerfile: Media/WebUI/Dockerfile
+    depends_on:
+      - mssql_db
+    networks:
+      - mynetwork
+
+
+  mssql_db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: mssql_db
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Ex@mplePa44word
+    ports:
+      - "1402:1433"
+    networks:
+      - mynetwork
+    volumes:
+      - ./data:/var/opt/mssql/data
+
+networks:
+  mynetwork:
+    driver: bridge

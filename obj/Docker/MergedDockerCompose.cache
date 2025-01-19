@@ -1,0 +1,61 @@
+name: dockercompose13840776340426755950
+services:
+  identityapi:
+    build:
+      context: /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media
+      dockerfile: Media/IdentityAPI/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: identityapi
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "5163"
+        protocol: tcp
+  peopleapi:
+    build:
+      context: /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media
+      dockerfile: Media/PeopleAPI/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: peopleapi
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "5111"
+        protocol: tcp
+  postapi:
+    build:
+      context: /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media
+      dockerfile: Media/PostAPI/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: postapi
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "5232"
+        protocol: tcp
+  webui:
+    build:
+      context: /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media
+      dockerfile: Media/WebUI/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: webui
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "5155"
+        protocol: tcp
+networks:
+  default:
+    name: dockercompose13840776340426755950_default

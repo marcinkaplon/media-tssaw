@@ -1,0 +1,31 @@
+﻿@model WebUI.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Logowanie";
+}
+
+<h2 class="text-center mb-4">Zaloguj</h2>
+
+<form asp-action="Login" method="post" class="container" style="max-width: 400px;">
+    <div class="mb-3">
+        <label for="Email" class="form-label">Adres email</label>
+        <input asp-for="Email" class="form-control" id="Email" />
+        <div class="text-danger" asp-validation-for="Email"></div>
+    </div>
+    <div class="mb-3">
+        <label for="Password" class="form-label">Hasło</label>
+        <input asp-for="Password" type="password" class="form-control" id="Password" />
+        <div class="text-danger" asp-validation-for="Password"></div>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Zaloguj się</button>
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger mt-3">
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <p>@error.ErrorMessage</p>
+            }
+        </div>
+    }
+</form>

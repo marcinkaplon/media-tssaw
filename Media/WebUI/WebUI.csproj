@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DockerComposeProjectPath>../../docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <None Remove="Views\Auth\" />
+    <None Remove="Views\Profile\" />
+    <None Remove="Views\Feed\" />
+    <None Remove="Views\Post\" />
+    <None Remove="Views\Account\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Auth\" />
+    <Folder Include="Views\Profile\" />
+    <Folder Include="Views\Feed\" />
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\images\profiles\" />
+    <Folder Include="Views\Post\" />
+    <Folder Include="Views\Account\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\images\" />
+    <Content Remove="wwwroot\images\profiles\" />
+  </ItemGroup>
+</Project>

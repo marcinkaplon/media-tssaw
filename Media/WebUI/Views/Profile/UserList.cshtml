@@ -1,0 +1,46 @@
+﻿@model WebUI.Models.UserListViewModel
+
+@{
+    ViewData["Title"] = "Użytkownicy";
+}
+
+<h1>Wszyscy użytkownicy</h1>
+
+@if (Model.Users.Any())
+{
+    foreach (var user in Model.Users)
+    {
+        @if (user != null)
+        {
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="profile-pic-post">
+                        <img src="@user.ProfilePicturePath" alt="Profile Picture" />
+                    </div>
+                    <div class="post-info">
+                        <div class="user-info">
+                            <h4>
+                                @user.Username
+                                <a href="@Url.Action("Details", "Profile", new { name = user.UsernameUnique })" class="user-unique-id">@@@user.UsernameUnique</a>
+                            </h4>
+                        </div>
+                        <span class="show-profile">@(user.Bio.Length > 100 ? user.Bio.Substring(0, 100) + "..." : user.Bio)</span>
+                        <br />
+                        <br />
+                        <form asp-action="Details" asp-controller="Profile" asp-route-name="@user.UsernameUnique">
+                            <button class="btn btn-primary">
+                                <i class=""></i> Zobacz profil
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+}
+else
+{
+    <p>Brak użytkowników.</p>
+}
+
+

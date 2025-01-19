@@ -1,0 +1,46 @@
+﻿@model WebUI.Models.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Rejestracja";
+}
+
+<h2 class="text-center mb-4">Zarejestruj się</h2>
+
+<form asp-action="Register" method="post" class="container" style="max-width: 400px;">
+    <div class="mb-3">
+        <label for="Username" class="form-label">Jak chcesz się nazywać?</label>
+        <input asp-for="Username" class="form-control" id="Username" />
+        <div class="text-danger" asp-validation-for="Username"></div>
+    </div>
+    <div class="mb-3">
+        <label for="UsernameUnique" class="form-label">Twoja unikalna nazwa użytkownika</label>
+        <input asp-for="UsernameUnique" class="form-control" id="UsernameUnique" />
+        <div class="text-danger" asp-validation-for="UsernameUnique"></div>
+    </div>
+    <div class="mb-3">
+        <label for="Email" class="form-label">Adres Email</label>
+        <input asp-for="Email" class="form-control" id="Email" />
+        <div class="text-danger" asp-validation-for="Email"></div>
+    </div>
+    <div class="mb-3">
+        <label for="Password" class="form-label">Hasło</label>
+        <input asp-for="Password" type="password" class="form-control" id="Password" />
+        <div class="text-danger" asp-validation-for="Password"></div>
+    </div>
+    <div class="mb-3">
+        <label for="ConfirmPassword" class="form-label">Powtórz hasło</label>
+        <input asp-for="ConfirmPassword" type="password" class="form-control" id="ConfirmPassword" />
+        <div class="text-danger" asp-validation-for="ConfirmPassword"></div>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Zarejestruj się</button>
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger mt-3">
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <p>@error.ErrorMessage</p>
+            }
+        </div>
+    }
+</form>

@@ -1,0 +1,85 @@
+name: dockercompose13840776340426755950
+services:
+  identityapi:
+    build:
+      context: /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media
+      dockerfile: Media/IdentityAPI/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: identityapi
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "5163"
+        protocol: tcp
+  mssql_component:
+    container_name: mssql_component
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: ExamplePassword
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    networks:
+      backend: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "1402"
+        protocol: tcp
+    volumes:
+      - type: volume
+        source: sqlserver-data
+        target: /var/opt/mssql
+        volume: {}
+  peopleapi:
+    build:
+      context: /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media
+      dockerfile: Media/PeopleAPI/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: peopleapi
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "5111"
+        protocol: tcp
+  postapi:
+    build:
+      context: /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media
+      dockerfile: Media/PostAPI/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: postapi
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "5232"
+        protocol: tcp
+  webui:
+    build:
+      context: /Users/marcin/Desktop/Marcin/IiE/sem3/TTSAW/Proba1/Media
+      dockerfile: Media/WebUI/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: webui
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "5155"
+        protocol: tcp
+networks:
+  backend:
+    name: dockercompose13840776340426755950_backend
+    driver: bridge
+  default:
+    name: dockercompose13840776340426755950_default
+volumes:
+  sqlserver-data:
+    name: dockercompose13840776340426755950_sqlserver-data

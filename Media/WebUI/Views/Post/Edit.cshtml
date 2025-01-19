@@ -1,0 +1,21 @@
+﻿@model PostEditSend
+
+@{
+    ViewData["Title"] = "Edycja posta";
+}
+
+<div class="container">
+    <h2>Edycja posta</h2>
+
+    <form asp-action="Edit" method="post">
+
+        <div class="form-group">
+            <label asp-for="Content" class="control-label">Treść:</label>
+            <textarea asp-for="Content" class="form-control no-resize" rows="3"></textarea>
+        </div>
+
+        <div class="form-group mt-3">
+            <button type="submit" class="btn btn-primary">Zapisz zmiany</button>
+        </div>
+    </form>
+</div>
